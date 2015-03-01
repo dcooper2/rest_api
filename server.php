@@ -2,8 +2,8 @@
 
 <?php
 
-$username = "root";
-$password = "root";
+$username = "";
+$password = "";
 $servername = "localhost";
 
 //create connection
