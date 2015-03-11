@@ -2,8 +2,8 @@
 
 <?php
 
-$username = "";
-$password = "";
+$username = "root";
+$password = "root";
 $servername = "localhost";
 
 //create connection
@@ -19,8 +19,8 @@ echo "Connected successfully\n";
 $db_connect = mysql_select_db("Coral", $connect);
 
 //processing requests
-$method = $_SERVER['REQUEST_METHOD'];
-$paths = $_SERVER['REQUEST_URI'];
+$method = (isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : null);
+$paths = (isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : null);
 $resource = explode("/",$paths);
 
 if ($resource == 'clients') {
