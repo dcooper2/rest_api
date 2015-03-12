@@ -45,6 +45,7 @@ if ($resource == 'corals') {
         } else {
                 $this->handleMethod($method, $name);
         }
+        echo $name;
 
 }else {
         header('HTTP/1.1 404 Not Found');
@@ -56,7 +57,7 @@ function handleMethod ($method, $name) {
 	switch($method) {
 	case 'PUT':
 		$this->create_contact($name);
-		$query_put = mysql_query("insert into corals values ($name)");
+		$query_put = mysql_query("insert into corals values ($name, $price)");
 		while ($row = mysql_fetch_array($query_put)) {
 			echo "name:".$row{'name'}." price:".$row{'price'}."\n";
 		}
